@@ -8,4 +8,3 @@ window.onload = () => {
     let iframe = document.getElementById('myApplicationFrame');
     iframe.setAttribute('src', `https://${username}.github.io/mygiftsearch/`);
 }
-
