@@ -3,7 +3,7 @@ Given an array of 2n numbers, group the numbers into n pairs of integer,
 such that the sum of the minimum of each pair is the largest.
 
 Example: 
-input: [4, 3, 8, 0]
+input: [4, 3, 8, 0] 8, 7, 6, 5, 4, 3, 2, 1
 output: 4
        because we can make the following pairs: (4, 8) and (3, 0) and 
        min(4,8) + min(3,0) = 4
@@ -11,5 +11,11 @@ output: 4
 */
 
 var maxSumOfMins = function(input) {
-
+       var sum = 0;
+       input.sort(function(a, b){return b-a});
+       for(var i = 0; i < input.length; i += 2){
+              sum += Math.min(input[i], input[i+1]);
+       }
+       return sum;
+       // return(Math.min(input[0], input[1]) + Math.min(input[2], input[3]));
 };

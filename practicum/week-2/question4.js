@@ -11,5 +11,10 @@ The letters in A are guaranteed distinct, and all characters in A and B are lett
 */
 
 var howManyCommon = function(A, B) {
-
+    var cnt = 0;
+    for(var i = 0; i < A.length; i++){
+        var single = (B.match(new RegExp(A[i], "g")) || []).length;
+        cnt += single;
+    }
+    return cnt;
 };
