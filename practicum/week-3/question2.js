@@ -1,4 +1,3 @@
-
 /*
 Given an integer array, input, 
 find the subarray
@@ -9,7 +8,4 @@ Example: input: [-12,3,-1,5,-2,1,-7]
                  because [3,-1,5] has the largest sum.
           */
 
- var largestSubarray = function(input) {
-     
-    
- };
+var largestSubarray = function (input) {};
