@@ -13,6 +13,15 @@ input: input1 = [2,1,26,3], input2 = [-5,-2,10,-3,7], d = 6
 output: 1
 */
 
-var d_count = function(input1, input2, d) {
-
+var d_count = function (input1, input2, d) {
+    var answer = input1.length;
+    for (var i = 0; i < input1.length; i++) {
+        for (var j = 0; j < input2.length; j++) {
+            if (Math.abs(input1[i] - input2[j]) <= d) {
+                answer--;
+                break;
+            }
+        }
+    }
+    return answer;
 };
