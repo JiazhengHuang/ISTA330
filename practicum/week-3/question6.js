@@ -11,6 +11,16 @@ input: [1, 2, 2, 3, 2, 7, 2]
 output: 2 
 */
 
-var m_element = function(input) {
-
+var m_element = function (input) {
+    var n = input.length;
+    for (var i = 0; i < input.length; i++) {
+        var tmp = 0;
+        for (var j = 0; j < input.length; j++) {
+            if (input[i] === input[j]) tmp++;
+        }
+        if (tmp > n / 2) {
+            return input[i];
+        }
+    }
+    return -1;
 };

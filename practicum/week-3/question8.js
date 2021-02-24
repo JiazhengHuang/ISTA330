@@ -12,6 +12,20 @@ input: [3,5,3,3,5,1]
 output: 3
 */
 
-var d_integer = function(input) {
-
+var d_integer = function (input) {
+    var answer = 0;
+    for (var i = 0; i < input.length; i++) {
+        var tmp = 0;
+        for (var j = 0; j < input.length; j++) {
+            if (input[i] === input[j]) tmp++;
+        }
+        if (tmp === input[i] && tmp > answer) {
+            answer = tmp;
+        }
+    }
+    if (answer === 0) {
+        return -1;
+    } else {
+        return answer;
+    }
 };

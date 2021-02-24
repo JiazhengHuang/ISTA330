@@ -12,6 +12,12 @@ Example:
  output: true
 */
 
-var hasDuplicates = function(input) {
-
+var hasDuplicates = function (input) {
+    var arr = [];
+    for (var i = 0; i < input.length; i++) {
+        var tmp = input[i];
+        if (arr.indexOf(tmp) !== -1) return true;
+        arr.push(tmp);
+    }
+    return false;
 };

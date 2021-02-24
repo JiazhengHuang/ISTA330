@@ -11,6 +11,14 @@ output: [[1,4], [2,5], [3,6]]
 
 */
 
-var transpose = function(M) {
-
+var transpose = function (M) {
+    var answer = [];
+    for (var i = 0; i < M[0].length; i++) {
+        var tmp = [];
+        for (var j = 0; j < M.length; j++) {
+            tmp.push(M[j][i]);
+        }
+        answer.push(tmp);
+    }
+    return answer;
 };

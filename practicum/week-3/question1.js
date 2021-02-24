@@ -10,12 +10,11 @@ Example:
 */
 
 var largestNumberIsAtLeastTwice = function (input) {
-  maxNum = Math.max(input) / 2;
-  var flag = 1;
-  for (var i = 0; i < input.length; i++) {
-    if (maxNum) {
-      flag;
+    var maxNum = Math.max(...input);
+    for (var i = 0; i < input.length; i++) {
+        if (maxNum != input[i] && maxNum < 2 * input[i]) {
+            return false;
+        }
     }
-    return false;
-  }
+    return true;
 };
