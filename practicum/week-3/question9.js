@@ -12,6 +12,4 @@ The groups are: [1, 10], [2, 11], [3], [4], [5], [6], [7], [8], [9]
 so there are two groups with the largest size.
 */
 
-var largestGroupsCount = function(n) {
-
-};
+var largestGroupsCount = function (n) {};
