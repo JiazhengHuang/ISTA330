@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body onload="showFlowers()">
     <div id="question">
         1. Display the flowers as per question 1.<br />
         2. Add the following functionality to the page:<br />
@@ -83,8 +83,8 @@
         }
         let daffodil = new Flower('Daffodil', 'daffodil.png');
         let cherryblossom = new Flower('Cherry blossom', 'cherryblossom.png');
-        let lily = new Flower('Lily', 'lily.png');
-        let daisy = new Flower('Daisy', 'daisy.png');
+        let lily = new Flower('Lily', 'lily.jpg');
+        let daisy = new Flower('Daisy', 'daisy.jpg');
         let sunflower = new Flower('Sunflower', 'sunflower.png');
         let tulip = new Flower('Tulip', 'tulip.png');
         let rose = new Flower('Rose', 'rose.png');
@@ -100,6 +100,41 @@
             rose,
             waterlily
         ];
+        console.log(typeof flowers[0]);
+
+        function showFlowers(){
+            let str = "";
+            for(let i = 0; i <flowers.length; i++){
+                str += "<div style='float: left'>";
+                str += "<img onclick='arrange(" + flowers[i].name + ")' id='" + flowers[i].name + "' src='./images/" + flowers[i].picture + "'><h5 style='text-align: center;'>" + flowers[i].name + "</h5>";
+                str += "</div>";
+            }
+            document.getElementById('flowersDiv').innerHTML = str;
+        }
+
+        function arrange(fname){
+            flowers.sort(compare);
+            let tmp = flowers.indexOf(fname);
+            for (let i = 0; i < tmp; i++){
+                let x = flowers.shift();
+                flowers.push(x);
+            }
+            showFlowers();
+        }
+
+        function compare(a, b) {
+            // Use toUpperCase() to ignore character casing
+            const nameA = a.name.toUpperCase();
+            const nameB = b.name.toUpperCase();
+
+            let comp = 0;
+            if (nameA > nameB) {
+                comp = 1;
+            } else if (nameA < nameB) {
+                comp = -1;
+            }
+            return comp;
+        }
     </script>
 </body>
 
