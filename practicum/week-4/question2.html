@@ -100,30 +100,29 @@
             rose,
             waterlily
         ];
-        console.log(typeof flowers[0]);
+        flowers.sort(compare);
 
         function showFlowers(){
             let str = "";
             for(let i = 0; i <flowers.length; i++){
                 str += "<div style='float: left'>";
-                str += "<img onclick='arrange(" + flowers[i].name + ")' id='" + flowers[i].name + "' src='./images/" + flowers[i].picture + "'><h5 style='text-align: center;'>" + flowers[i].name + "</h5>";
+                str += "<img onclick='arrange(" + i + ")' src='./images/" + flowers[i].picture + "'><h5 style='text-align: center;'>" + flowers[i].name + "</h5>";
                 str += "</div>";
             }
             document.getElementById('flowersDiv').innerHTML = str;
         }
 
-        function arrange(fname){
-            flowers.sort(compare);
-            let tmp = flowers.indexOf(fname);
-            for (let i = 0; i < tmp; i++){
+        function arrange(index){
+            // console.log(index);
+            for (let i = 0; i < index; i++){
                 let x = flowers.shift();
                 flowers.push(x);
+                console.log(flowers[0].name);
             }
             showFlowers();
         }
 
         function compare(a, b) {
-            // Use toUpperCase() to ignore character casing
             const nameA = a.name.toUpperCase();
             const nameB = b.name.toUpperCase();
 
